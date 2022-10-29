@@ -8,4 +8,8 @@
 6. Dùng file POM để lưu trữ thư viện Project
 7. Cấu trúc Project dạng Maven
 
+***Note**:
++ Fix code ghi dữ liệu test của các test cases của module Login trang Amazon: ghi kết quả test report vào file Excel 
++ Fix sửa lại tìm element có điều kiện chờ dạng Wait 
+
 
