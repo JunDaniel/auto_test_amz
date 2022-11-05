@@ -54,15 +54,8 @@ public class ReadExcel {
                         address.setphoneNumber((String) nextCell.getStringCellValue());
                         break;
                     case 6:
-                        address.setcardNumber((String) nextCell.getStringCellValue());
+                        address.setmessage((String) nextCell.getStringCellValue());
                         break;
-                    case 7:
-                        address.setNameonCard((String) nextCell.getStringCellValue());
-                        break;
-                    case 8:
-                        address.setexpirationDate((String) nextCell.getStringCellValue());
-                        break;
-
                 }
             }
             listAddress.add(address);

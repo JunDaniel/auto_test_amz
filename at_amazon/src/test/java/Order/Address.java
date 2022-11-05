@@ -7,23 +7,19 @@ public class Address {
     public String city;
     public String zipCode;
     public String phoneNumber;
-    public String cardNumber;
-    public String NameonCard;
-    public String expirationDate;
+    public String message;
 
     public Address() {
 
     }
-    public Address(String IDtc, String fullName, String streetAddress, String city, String zipCode, String phoneNumber, String cardNumber, String NameonCard, String expirationDate) {
+    public Address(String IDtc, String fullName, String streetAddress, String city, String zipCode, String phoneNumber, String message) {
         this.IDtc = IDtc;
         this.fullName = fullName;
         this.streetAddress = streetAddress;
         this.city = city;
         this.zipCode = zipCode;
         this.phoneNumber = phoneNumber;
-        this.cardNumber = cardNumber;
-        this.NameonCard = NameonCard;
-        this.expirationDate = expirationDate;
+        this.message = message;
     }
     public String getIDtc() {
         return IDtc;
@@ -61,22 +57,10 @@ public class Address {
     public void setphoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-    public String getcardNumber() {
-        return cardNumber;
+    public String getmessage() {
+        return message;
     }
-    public void setcardNumber(String cardNumber) {
-        this.cardNumber = cardNumber;
-    }
-    public String getNameonCard() {
-        return NameonCard;
-    }
-    public void setNameonCard(String NameonCard) {
-        this.NameonCard = NameonCard;
-    }
-    public String getexpirationDate() {
-        return expirationDate;
-    }
-    public void setexpirationDate(String expirationDate) {
-        this.expirationDate = expirationDate;
+    public void setmessage(String message) {
+        this.message = message;
     }
 }
