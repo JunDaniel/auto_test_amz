@@ -1,6 +1,9 @@
 # auto_test_amz
-*Video demo: https://www.youtube.com/watch?v=3CU_ukg6ZXk
-*Video demo run script auto khi order item in web Amazon: https://www.youtube.com/watch?v=afbW4S8o4rM
+## Video demo: 
+https://www.youtube.com/watch?v=3CU_ukg6ZXk
+## Video demo run script auto khi order item in web Amazon: 
+https://www.youtube.com/watch?v=afbW4S8o4rM
+
 1. Môi trường code: Intellij IDEA
 2. Trình duyệt Chrome
 3. Ngôn ngữ Java
