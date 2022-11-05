@@ -152,7 +152,6 @@ public class Test_Order {
                 } catch (Exception  e) {
                     e.printStackTrace ();
                 }
-                //driver.navigate().refresh();
                 break;
             case "04":
                 try {
@@ -180,23 +179,23 @@ public class Test_Order {
                 } catch (Exception  e) {
                     e.printStackTrace ();
                 }
-                //driver.navigate().refresh();
                 break;
             case "05":
                 try {
                     setData(FullName, StreetAddress, City, ZipCode, PhoneNumber, fullName, streetAddress, city, zipCode, phoneNumber);
                     eleBtnSubmit.click();
                     String status = "";
-                    String actualResult5 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'Please provide a valid phone number')]"))).getText();
-                    if (actualResult5.contentEquals(message)) {
-                        testResult.put("result", "PASS");
-                        status = "PASS";
+                    WebDriverWait waitWarning = new WebDriverWait(driver, 20);
+                    WebElement eleWarning = waitWarning.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'Please provide a valid phone number')]")));
+                    if (eleWarning !=null){
+                        String actualResult5 = eleWarning.getText();
+                        if (actualResult5.contentEquals(message)) {
+                            status = "PASS";
+                        } else {
+                            status = "FAIL";
+                        }
                     }
-                    else {
-                        testResult.put("result", "FAIL");
-                        status = "FAIL";
-                    }
-
+                    testResult.put("result", status);
                     testResult.put("IDtc", IDtc);
                     testResult.put("Full name", fullName );
                     testResult.put("Street address", streetAddress);
@@ -206,10 +205,10 @@ public class Test_Order {
                     testResult.put("Message", message);
                     String rst = IDtc + ";" + fullName + ";" + streetAddress + ";" + city + ";" + zipCode + ";" + phoneNumber + ";" + message + ";" + status;
                     arrResult.add(rst);
-                } catch (Exception  e) {
-                    e.printStackTrace ();
+                } catch (Exception e) {
+                    String rst = IDtc + ";" + fullName + ";" + streetAddress + ";" + city + ";" + zipCode + ";" + phoneNumber + ";" + message + ";" + "FAIL";
+                    arrResult.add(rst);
                 }
-                //driver.navigate().refresh();
                 break;
             case "06":
                 try {
