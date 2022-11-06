@@ -1,6 +1,5 @@
 package Order;
 
-import Sign_in.WriteExcel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -247,7 +246,7 @@ public class Test_Order {
     }
     @Test(priority = 2)
     public void export() throws IOException {
-        //code function ghi ket qua test rieng cho chuc nang order va goi ham ghi data test order tai day
+        writeExcel.writeResultTestOrder(arrResult, fileOutputPath);
     }
     @BeforeTest
     public void openBrowser() {
@@ -265,9 +264,7 @@ public class Test_Order {
         WebDriverWait wait = new WebDriverWait(driver, 120);
         WebElement eleNav = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//header/div[@id='navbar']/div[@id='nav-belt']/div[3]/div[1]/a[2]/span[1]")));
         Actions actions = new Actions(driver);
-        actions.moveToElement(eleNav).perform();
-        WebElement eleLi = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//header/div[@id='navbar']/div[@id='nav-belt']/div[3]/div[1]/a[2]/span[1]")));
-        actions.moveToElement(eleLi).click().perform();
+        actions.moveToElement(eleNav).click().perform();
         WebElement eleNavCart = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='nav-cart']")));
         eleNavCart.click();
         WebElement eleProceedToRetailCheckout = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='proceedToRetailCheckout']")));

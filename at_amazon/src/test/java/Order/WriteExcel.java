@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class WriteExcel {
-    public void writeData(ArrayList<String> arrResult, String excelFilePath) {
+    public void writeResultTestOrder(ArrayList<String> arrResult, String excelFilePath) {
         List<String> headers = Arrays.asList("IDtc", "Full name", "Stresst Address", "City", "Zip Code", "Phone Number", "Message", "Results");
         int currentRowNumber = 0;
         try (XSSFWorkbook workbook = new XSSFWorkbook()) {
