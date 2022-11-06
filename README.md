@@ -19,6 +19,6 @@ https://www.youtube.com/watch?v=afbW4S8o4rM
 + Fix sửa lại tìm element có điều kiện chờ dạng Wait 
 + Fix script auto khi order đặt mua hàng trên trang web Amazon
 + Fix run ổn định cho script auto 
-+ Ghi kết quả run test script auto order đặt mua hàng trên trang web Amazon: chưa có hàm ghi file excel (cần code hàm ghi kết quả test file excel riêng cho chức năng đặt mua hàng Amazon)
++ Viết lại script auto với test case 6
 
 
