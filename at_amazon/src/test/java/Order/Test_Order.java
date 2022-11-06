@@ -52,7 +52,6 @@ public class Test_Order {
             Cred[i][5] = x.getphoneNumber();
             Cred[i][6] = x.getmessage();
         }
-        System.out.println("object data" + Cred);
         return Cred;
     }
     @Test(dataProvider = "data_order", priority = 1)
@@ -264,9 +263,6 @@ public class Test_Order {
         driver.navigate().to(URL);
         driver.manage().window().maximize();
         WebDriverWait wait = new WebDriverWait(driver, 120);
-        WebElement eleNav = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//header/div[@id='navbar']/div[@id='nav-belt']/div[3]/div[1]/a[2]/span[1]")));
-        Actions actions = new Actions(driver);
-        actions.moveToElement(eleNav).click().perform();
         WebElement eleNavCart = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='nav-cart']")));
         eleNavCart.click();
         WebElement eleProceedToRetailCheckout = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='proceedToRetailCheckout']")));
