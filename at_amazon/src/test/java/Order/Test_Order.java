@@ -212,8 +212,10 @@ public class Test_Order {
             case "06":
                 try {
                     setData(FullName, StreetAddress, City, ZipCode, PhoneNumber, fullName, streetAddress, city, zipCode, phoneNumber);
-                    eleBtnSubmit.click();
-                    String actualResult6 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),\"We couldn't verify your address. Please make sure \")]"))).getText();
+                    Actions act = new Actions(driver);
+                    WebElement eleAutoFill = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@id='address-ui-widgets-DetectLocationButton']")));
+                    act.moveToElement(eleAutoFill).click().perform();
+                    String actualResult6 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(), 'Hmm. We couldn’t find your device’s location. Please enter the address manually.')]"))).getText();
                     String status = "";
                     if (actualResult6.contentEquals(message)) {
                         testResult.put("result", "PASS");
@@ -275,6 +277,7 @@ public class Test_Order {
 
     @AfterTest
     public void closebrowser() {
+        driver.quit();
     }
 
     public void setData(WebElement FullName,
